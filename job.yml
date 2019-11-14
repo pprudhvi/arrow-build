@@ -1,0 +1,28 @@
+!Job
+target: !Target
+  head: fed55d0dd9c3241bc38f67981730f571ff10e13e
+  email: travis@example.org
+  branch: gcc-errors
+  remote: https://github.com/pprudhvi/arrow
+  version: 0.14.0.dev937
+  no_rc_version: 0.14.0.dev937
+tasks:
+  gandiva-jar-osx: !Task
+    ci: travis
+    platform: osx
+    template: gandiva-jars/travis.osx.yml
+    artifacts:
+    - arrow-gandiva-0.14.0.dev937-SNAPSHOT.jar
+    params: {}
+    branch: nightly-294-travis-gandiva-jar-osx
+    commit: 623f74374c58cc386e803907d251ea2a419060d6
+  gandiva-jar-trusty: !Task
+    ci: travis
+    platform: linux
+    template: gandiva-jars/travis.linux.yml
+    artifacts:
+    - arrow-gandiva-0.14.0.dev937-SNAPSHOT.jar
+    params: {}
+    branch: nightly-294-travis-gandiva-jar-trusty
+    commit: cfd3442edddfd01eff77a6a1dfda880e6a08f136
+branch: nightly-294
