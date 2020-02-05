@@ -35,5 +35,5 @@ install:
     python-gnupg
 script:
 - pushd ..
-- git clone -b gcc-errors https://github.com/pprudhvi/arrow
+- git clone -b beforelong https://github.com/pprudhvi/arrow
 - python arrow/dev/tasks/crossbow.py --queue-path $TRAVIS_BUILD_DIR submit --job-prefix nightly -g gandiva
