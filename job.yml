@@ -1,0 +1,28 @@
+!Job
+target: !Target
+  head: 609e495a3b5344978af366b86aa5103e357f0825
+  email: travis@example.org
+  branch: movefix
+  remote: https://github.com/pprudhvi/arrow
+  version: 0.14.1.dev1898
+  no_rc_version: 0.14.1.dev1898
+tasks:
+  gandiva-jar-xenial: !Task
+    ci: travis
+    platform: linux
+    template: gandiva-jars/travis.linux.yml
+    artifacts:
+    - arrow-gandiva-0.14.1.dev1898-SNAPSHOT.jar
+    params: {}
+    branch: nightly-341-travis-gandiva-jar-xenial
+    commit: f9ab18506629f5ef5c2f3d487c888d669f11181a
+  gandiva-jar-osx: !Task
+    ci: travis
+    platform: osx
+    template: gandiva-jars/travis.osx.yml
+    artifacts:
+    - arrow-gandiva-0.14.1.dev1898-SNAPSHOT.jar
+    params: {}
+    branch: nightly-341-travis-gandiva-jar-osx
+    commit: 0d493a8258b86da6cc0801684efd612eadaf5d13
+branch: nightly-341
