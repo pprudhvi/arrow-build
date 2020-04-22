@@ -1,0 +1,28 @@
+!Job
+target: !Target
+  head: 1e235ddc11ff6ee4620b62e3b5f9a318d117512b
+  email: travis@example.org
+  branch: newDockerImage
+  remote: https://github.com/pprudhvi/arrow
+  version: 0.14.1.dev1985
+  no_rc_version: 0.14.1.dev1985
+tasks:
+  gandiva-jar-osx: !Task
+    ci: travis
+    platform: osx
+    template: gandiva-jars/travis.osx.yml
+    artifacts:
+    - arrow-gandiva-0.14.1.dev1985-SNAPSHOT.jar
+    params: {}
+    branch: nightly-344-travis-gandiva-jar-osx
+    commit: 3cfe0a91875cf144031ca308c532e2a06e192aca
+  gandiva-jar-xenial: !Task
+    ci: travis
+    platform: linux
+    template: gandiva-jars/travis.linux.yml
+    artifacts:
+    - arrow-gandiva-0.14.1.dev1985-SNAPSHOT.jar
+    params: {}
+    branch: nightly-344-travis-gandiva-jar-xenial
+    commit: 259885b657b332af912831fa7743c3606d3066b9
+branch: nightly-344
