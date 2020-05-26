@@ -1,0 +1,27 @@
+!Job
+target: !Target
+  head: a262cf1acbb270aa498af30e1b704d37bd1098fa
+  email: travis@example.org
+  branch: rel-450
+  remote: https://github.com/dremio/arrow
+  version: 0.1.dev6698
+  no_rc_version: 0.1.dev6698
+  no_rc_semver_version: 0.1-dev6698
+tasks:
+  gandiva-jar-xenial: !Task
+    ci: travis
+    template: gandiva-jars/travis.linux.yml
+    artifacts:
+    - arrow-gandiva-0.1.dev6698-SNAPSHOT.jar
+    params: {}
+    branch: nightly-348-travis-gandiva-jar-xenial
+    commit: 81909626619956052bbe48cac495d44aa2428c21
+  gandiva-jar-osx: !Task
+    ci: travis
+    template: gandiva-jars/travis.osx.yml
+    artifacts:
+    - arrow-gandiva-0.1.dev6698-SNAPSHOT.jar
+    params: {}
+    branch: nightly-348-travis-gandiva-jar-osx
+    commit: 463b68ae3550f505dad84b0ec24653975345c163
+branch: nightly-348
